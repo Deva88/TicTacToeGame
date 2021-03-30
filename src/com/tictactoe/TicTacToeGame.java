@@ -8,7 +8,10 @@ public class TicTacToeGame {
 		char[] board = new char[10];
 		/* initialize board with empty space */
 		for (int pos = 1; pos < board.length; pos++) {
-			board[pos] = ' ';
+			System.out.print("board values are " + board[pos] + " ");
+			if (pos % 3 == 0)
+				System.out.println("\n");
+			
 		}
 		return board;
 	}
