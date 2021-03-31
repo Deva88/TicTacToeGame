@@ -1,35 +1,25 @@
 package com.tictactoe;
 
-import java.util.*;
-/*@Description- simulator for TicTacToe Game*/
+/*@Description- simulator for TicTacToe Game show Board*/
 
 public class TicTacToeGame {
-
-	static Scanner sc = new Scanner(System.in);
-	static char playerLetter, computerLetter;
-
-	// Taking Input
-	public static char takeInput() {
-		System.out.println("Enter the letter you wish to take: ('X' / 'O'): ");
-		char input = Character.toUpperCase(sc.next().charAt(0));
-		if (input == 'X' || input == 'O') {
-			setLetter(input);
-			return input;
-		} else {
-			System.out.println("Invalid Character. Try Again.");
-			return takeInput();
+	// create one method showBoard()
+	public static void showBoard() {
+		//taken 9 column
+		char[][] board = { { ' ', '|', ' ', '|', ' ' }, //row
+						   { '-', '+', '-', '+', '-' }, 
+						   { ' ', '|', ' ', '|', ' ' },//row
+						   { '-', '+', '-', '+', '-' }, 
+						   { ' ', '|', ' ', '|', ' ' }, //row 
+						   };
+		//catch character in for loop
+		for (int i = 0; i < board.length; i++) {
+			System.out.println(board[i]);
 		}
 	}
-
-	// Determine letter for player and computer
-	public static void setLetter(char playerLetter) {
-		computerLetter = (playerLetter == 'X') ? 'O' : 'X';
-		System.out.println("Player Letter: " + playerLetter + "\nComputer Letter : " + computerLetter);
+	
+	public static void main(String[] args) {
+		showBoard();
 	}
 
-	public static void main(String args[]) {
-		System.out.println("Welcome to the TIC_TAC_TOE game");
-		// userInput();
-		takeInput();
-	}
 }
